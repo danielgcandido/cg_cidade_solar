@@ -108,13 +108,50 @@ Reproduzem sons de clique **por completo** antes de trocar de cena (via coroutin
 
 Assets/
 ├── Audio/
-│    ├── Ambient/
-│    ├── Music/
-│    └── SFX/
+│   ├── Ambient/
+│   │   └── city_ambience.wav
+│   ├── Music/
+│   └── SFX/
+│       ├── button_click.wav
+│       ├── power_up.wav
+│       ├── whoosh_short.mp3
+│       └── wind_turbine.wav
+├── Materials/
+│   ├── M_PainelSolar.mat
+│   ├── M_SunLogo.mat
+│   ├── M_Turbina.mat
+│   ├── M_WindLogo.mat
+│   ├── New Actions.inputactions
+│   └── RoadMat.mat
 ├── Prefabs/
+│   ├── SolarPanelPrefab.prefab
+│   └── WindTurbinePrefab.prefab
 ├── Scenes/
+│   ├── Instrucoes.unity
+│   ├── MainCityScene.unity
+│   ├── MenuPrincipal.unity
+│   └── SampleScene.unity
 ├── Scripts/
+│   ├── EnergyManager.cs
+│   ├── EscapeToMenu.cs
+│   ├── GameManager.cs
+│   ├── InstallPoint.cs
+│   ├── InstructionsController.cs
+│   ├── MainMenuController.cs
+│   ├── SFXPlayer.cs
+│   ├── SolarPanelVisual.cs
+│   ├── SunController.cs
+│   ├── SunMarkerRotator.cs
+│   ├── UIManager.cs
+│   ├── WindManager.cs
+│   ├── WindMarkerRotator.cs
+│   ├── WindTurbineAudio.cs
+│   └── WindTurbineVisual.cs
+├── Textures/
+│   ├── sun_logo.png
+│   └── wind_logo.png
 └── UI/
+
 
 ```
 
@@ -136,7 +173,7 @@ Para executar:
 
 ## 📹 Vídeo de Demonstração
 
-**Link para o vídeo:** *em breve*
+**Link para o vídeo:** https://drive.google.com/file/d/1y7SVm0SuwPB0j7dpvF66TWR6frvlgvVb/view?usp=sharing
 
 ---
 
@@ -144,7 +181,7 @@ Para executar:
 
 O GDD completo está disponível em:
 
-- `docs/GDD.pdf`
+- `docs/GDD___Cidade_Solar.pdf`
 
 ---
 
