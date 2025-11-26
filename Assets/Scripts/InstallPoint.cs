@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem; // Novo Input System
 
 public class InstallPoint : MonoBehaviour
 {
@@ -18,38 +19,74 @@ public class InstallPoint : MonoBehaviour
     [Header("Posição de spawn (opcional)")]
     public Transform spawnPointOverride;
 
-    private void OnTriggerStay(Collider other)
+    // Controle interno
+    private bool playerDentro = false;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerDentro = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerDentro = false;
+        }
+    }
+
+    private void Update()
     {
         if (jaInstalado)
             return;
 
-        // garante que é o player
-        if (!other.CompareTag("Player"))
+        if (!playerDentro)
             return;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        // Novo Input System
+        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            // Atualiza energia/pontos
-            if (EnergyManager.Instance != null)
-            {
-                switch (tipo)
-                {
-                    case InstallType.SolarPanel:
-                        EnergyManager.Instance.InstalarPainelSolar();
-                        break;
-
-                    case InstallType.WindTurbine:
-                        EnergyManager.Instance.InstalarTurbinaEolica();
-                        break;
-                }
-            }
-
-            // Cria o objeto visual
-            SpawnVisual();
-
-            jaInstalado = true;
-            gameObject.SetActive(false);
+            Instalar();
         }
+
+        // Se estivesse usando o Input antigo, seria:
+        // if (Input.GetKeyDown(KeyCode.E)) { Instalar(); }
+    }
+
+    private void Instalar()
+    {
+        if (jaInstalado)
+            return;
+
+        // Atualiza energia/pontos
+        if (EnergyManager.Instance != null)
+        {
+            switch (tipo)
+            {
+                case InstallType.SolarPanel:
+                    EnergyManager.Instance.InstalarPainelSolar();
+                    break;
+
+                case InstallType.WindTurbine:
+                    EnergyManager.Instance.InstalarTurbinaEolica();
+                    break;
+            }
+        }
+
+        // Som de instalação
+        if (SFXPlayer.Instance != null)
+        {
+            SFXPlayer.Instance.PlayInstallSound();
+        }
+
+        // Cria o objeto visual
+        SpawnVisual();
+
+        jaInstalado = true;
+        gameObject.SetActive(false);
     }
 
     private void SpawnVisual()

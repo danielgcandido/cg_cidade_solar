@@ -14,7 +14,6 @@ public class UIManager : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton simples para acesso global
         if (Instance == null)
         {
             Instance = this;
@@ -27,7 +26,6 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        // Valores iniciais (podemos ajustar depois)
         AtualizarEnergia(0);
         AtualizarPontos(0);
         AtualizarTempo(120f);

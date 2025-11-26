@@ -45,7 +45,6 @@ public class EnergyManager : MonoBehaviour
     {
         AtualizarTempoDecrescente();
         
-        // DEBUG: testar HUD sem objetos ainda
         if (Input.GetKeyDown(KeyCode.Alpha1))
             InstalarPainelSolar();
 

@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
 
         isGameOver = false;
         Time.timeScale = 1f; // garante tempo normal
+
+        // Ao iniciar o jogo (MainCityScene), travar cursor para FPS
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void WinGame()
