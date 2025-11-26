@@ -136,8 +136,6 @@ Para executar:
 
 ## 📹 Vídeo de Demonstração
 
-(Adicionar link após subir no YouTube/Drive)
-
 **Link para o vídeo:** *em breve*
 
 ---
@@ -146,8 +144,7 @@ Para executar:
 
 O GDD completo está disponível em:
 
-- `docs/GDD.pdf`  
-- (ou na raiz do repositório, conforme sua preferência)
+- `docs/GDD.pdf`
 
 ---
 
@@ -165,7 +162,7 @@ O jogo reforça conceitos de:
 
 ## 👤 Autor
 
-**Daniel Cândido**  
+**Daniel G. Cândido**  
 Disciplina: Computação Gráfica  
 UNESP – Bauru
 
